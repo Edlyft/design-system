@@ -15,7 +15,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react",
-    "declaration": true
+    "declaration": false
   },
   "include": ["src"],
   "exclude": ["src/**/*.stories.@(mdx,tsx)"]
