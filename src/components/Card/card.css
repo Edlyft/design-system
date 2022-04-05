@@ -1,0 +1,9 @@
+@import '../variables.css';
+
+.edlyft-card {
+  font-family: HelveticaNeue;
+  padding: 0.5rem;
+  width: 26.18rem;
+  height: 11.5rem;
+  background-color: var(--color-primary-dodgerblue-10);
+}

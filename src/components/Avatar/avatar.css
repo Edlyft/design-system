@@ -1,0 +1,116 @@
+@import '../variables.css';
+
+.edlyft-avatar {
+  background-color: #ffd8bf;
+  display: flex;
+  color: #fa541c;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.edlyft-avatar-lg {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+}
+
+.edlyft-avatar-md {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1rem;
+}
+
+.edlyft-avatar-sm {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-size: 0.875rem;
+}
+
+.edlyft-avatar-xs {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+}
+
+.edlyft-avatar-seperated-power {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #fa541c;
+  color: white;
+  border-radius: 0.25rem;
+}
+
+.edlyft-avatar-fused-power-lg {
+  width: 2rem;
+  margin-left: -1rem;
+  margin-top: -0.6rem;
+  height: 1.25rem;
+  background: #fa541c;
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.625rem;
+  border: solid 0.1rem white;
+}
+
+.edlyft-avatar-fused-power-md {
+  width: 1.9375rem;
+  margin-left: -0.8rem;
+  margin-top: -0.6rem;
+  height: 1.2rem;
+  background: #fa541c;
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.6rem;
+  border: solid 0.1rem white;
+}
+
+.edlyft-avatar-fused-power-sm {
+  width: 1.6875rem;
+  margin-left: -1rem;
+  margin-top: -0.6rem;
+  height: 1rem;
+  background: #fa541c;
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  border: solid 0.1rem white;
+}
+
+.edlyft-avatar-fused-power-xs {
+  width: 1.6875rem;
+  margin-left: -0.8rem;
+  margin-top: -0.8rem;
+  height: 1.2rem;
+  background: #fa541c;
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 1rem;
+  border: solid 0.1rem white;
+}
+
+.edlyft-avatar-wrapper {
+  font-family: HelveticaNeue;
+  display: flex;
+  flex-direction: row;
+}

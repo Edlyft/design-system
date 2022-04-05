@@ -1,10 +1,9 @@
 {
-  "name": "@edlyft/design-system",
+  "name": "boye-design-sys",
   "version": "0.1.0",
   "main": "./lib/main.js",
   "module": "./lib/main.js",
   "types": "./lib/main.d.ts",
-  "private": true,
   "author": "Olanrewaju A. Olaboye",
   "files": [
     "lib"
@@ -16,9 +15,6 @@
   "homepage": "https://github.com/Edlyft/design-system#readme",
   "bugs": {
     "url": "https://github.com/Edlyft/design-system/issues"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
@@ -87,5 +83,10 @@
     "copyfiles": "^2.4.1",
     "rimraf": "^3.0.2",
     "webpack": "^5.70.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "directories": {
+    "lib": "lib"
+  },
+  "license": "ISC"
 }

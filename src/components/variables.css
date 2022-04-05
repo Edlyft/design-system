@@ -1,0 +1,47 @@
+
+
+:root {
+    --color-primary: #4290f3;
+    --color-primary-charcoal: #385165;
+    --color-primary-dodgerblue: #4290f3;
+    --color-primary-dodgerblue-6: #F4F8FE;
+    --color-primary-dodgerblue-10:  #EBF3FD;
+    --color-primary-dodgerblue-40: #B3D3FA
+    --color-primary-dodgerblue-tint: #4081EB
+    --color-primary-darktorquoise: #54CDD5;
+    --color-primary-darktorquoise-10:  #EEFAFB;
+    --color-primary-darktorquoise-30:   #CCF0F2;
+    --color-secondary-text : #2C2543;
+    --color-secondary-text-20 : #D5D3D9;
+    --color-secondary-text-30 : #C0BEC7;
+    --color-secondary-text-50 : #9592A1;
+    --color-secondary-text-70 :  #6B667B;
+    --color-secondary-semantics-success :  #78CA95;
+    --color-secondary-semantics-success-10 :  #F1FAF4;
+    --color-secondary-semantics-success-50 :  #BCE4CA;
+    --color-secondary-semantics-dangerpink :  #EB6469;
+    --color-secondary-semantics-dangerpink-10 :   #FDF0F0;
+    --color-secondary-semantics-dangerpink-50 :    #FDF0F0;
+    --color-secondary-semantics-warning :    #F9D772;
+    --color-secondary-semantics-warning-10 :  #FEF8EF;
+    --color-secondary-semantics-warning-50 :  #FCEBB8;
+    --color-secondary-greywhite :#FFFFFF;
+    --color-secondary-greyblack: #000000;
+    --color-secondary-greyblack-2 : #F9F9F9
+    --color-secondary-greyblack-12 :#DFDFE1
+    --color-secondary-greyblack-27 :#BABABA;
+    --color-secondary-greyblack-40 :#999999;
+    --color-secondary-greyblack-60 :#666666;
+    --color-secondary-greyblack-80 : #333333;
+  }
+
+  @font-face {
+    font-family: HelveticaNeue;
+    src: local(''),
+         url('/public/fonts/HelveticaNeue.ttc') format('ttc'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }
+
+  @font-face {
+    font-family: CircularStd;
+    src: url('/public/fonts/CircularStd-Light.otf'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  }

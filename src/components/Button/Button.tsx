@@ -1,48 +1,63 @@
-import React from 'react';
-import './button.css';
+import React from 'react'
+import './button.css'
+import { ReactComponent as CaretIcon } from './assets/ant-design_caret-down-filled.svg'
 
 interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  primary?: boolean;
+  // primary?: boolean
   /**
    * What background color to use
    */
-  backgroundColor?: string;
+  backgroundColor?: string
+  borderRadius?: string
   /**
    * How large should the button be?
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large'
+  colorMode: string
+  withIcon?: boolean
+  circle?: boolean
   /**
    * Button contents
    */
-  label: string;
+  label: string
   /**
    * Optional click handler
    */
-  onClick?: () => void;
+  onClick?: () => void
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({
-  primary = false,
+  colorMode = 'primary',
   size = 'medium',
   backgroundColor,
+  borderRadius,
+  withIcon = false,
   label,
+  circle = false,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const mode =
+    colorMode.length > 1
+      ? `edlyft-button--${colorMode}`
+      : 'edlyft-button--primary'
+  const shape = circle ? 'edlyft-button--circle' : ''
   return (
     <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      type='button'
+      className={['edlyft-button', `edlyft-button--${size}`, mode, shape].join(
+        ' '
+      )}
+      style={{ backgroundColor, borderRadius }}
       {...props}
     >
       {label}
+      {withIcon && <CaretIcon />}
     </button>
-  );
-};
+  )
+}
