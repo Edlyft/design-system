@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { ProgressBar, CompoundProgressBar } from './ProgressBar'
+import { ProgressBar, CompoundProgressBar, FiveStar } from './ProgressBar'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -22,6 +22,10 @@ const CompountTemplate: ComponentStory<typeof CompoundProgressBar> = (args) => (
   <CompoundProgressBar {...args} />
 )
 
+const FiveStarTemplate: ComponentStory<typeof FiveStar> = (args) => (
+  <FiveStar {...args} />
+)
+
 export const Base = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Base.args = {
@@ -31,4 +35,11 @@ Base.args = {
 export const Compound = CompountTemplate.bind({})
 Compound.args = {
   backgroundColor: '#F9E27E',
+}
+
+export const FiveStarRatings = FiveStarTemplate.bind({})
+FiveStarRatings.args = {
+  backgroundColor: '#F9E27E',
+  readOnly: false,
+  averageRating: 4.8,
 }

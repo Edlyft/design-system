@@ -1,5 +1,6 @@
 import React from 'react'
 import './button.css'
+import CSS from 'csstype'
 import { ReactComponent as CaretIcon } from './assets/ant-design_caret-down-filled.svg'
 
 interface ButtonProps {
@@ -19,6 +20,7 @@ interface ButtonProps {
   colorMode: string
   withIcon?: boolean
   circle?: boolean
+  style?: CSS.Properties
   /**
    * Button contents
    */
@@ -39,6 +41,7 @@ export const Button = ({
   borderRadius,
   withIcon = false,
   label,
+  style = {},
   circle = false,
   ...props
 }: ButtonProps) => {
@@ -47,6 +50,16 @@ export const Button = ({
       ? `edlyft-button--${colorMode}`
       : 'edlyft-button--primary'
   const shape = circle ? 'edlyft-button--circle' : ''
+  if (withIcon) {
+    style = {
+      ...style,
+      display: 'flex',
+      flexDirection: 'row',
+      // justifyContent: 'center',
+      // alignItems: 'center',
+      // alignContent: 'center',
+    }
+  }
   return (
     <button
       type='button'
@@ -56,8 +69,16 @@ export const Button = ({
       style={{ backgroundColor, borderRadius }}
       {...props}
     >
-      {label}
-      {withIcon && <CaretIcon />}
+      {withIcon ? (
+        <>
+          <div>{label} </div>
+          <div>
+            <CaretIcon />
+          </div>
+        </>
+      ) : (
+        label
+      )}
     </button>
   )
 }
