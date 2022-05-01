@@ -1,7 +1,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Button } from './Button'
+import { Button, RoundButton } from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -15,11 +15,20 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const RoundTemplate: ComponentStory<typeof RoundButton> = (args) => (
+  <RoundButton {...args} />
+)
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  // primary: true,
+  label: 'Button',
+}
+
+export const Secondary = Template.bind({})
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Secondary.args = {
+  colorMode: 'secondary',
   label: 'Button',
 }
 
@@ -35,11 +44,13 @@ Outline.args = {
   colorMode: 'primary-outline',
 }
 
-export const Round = Template.bind({})
+export const Round = RoundTemplate.bind({})
 Round.args = {
-  label: '',
-  colorMode: 'primary',
-  circle: true,
+  label: 'A',
+  icon: true,
+  direction: 'forward',
+  iconFill: '#FFFFFF',
+  mode: 'secondary',
 }
 
 export const Small = Template.bind({})

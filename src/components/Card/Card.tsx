@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { Divider } from 'antd'
 import './card.css'
 import CSS from 'csstype'
 import { Typography } from '../Typography/Typography'
@@ -11,7 +12,7 @@ interface CardProps {
   height?: string
   style?: CSS.Properties
   textColor?: string
-  children: JSX.Element
+  children?: JSX.Element
   onClick?: () => void
 }
 
@@ -111,13 +112,70 @@ export const CompoundCard = ({
   )
 }
 
-// export const StudentFeedBackCard = ({}) => {
-//   return (
-//   <div>
-//     <Typography  />
+export const StudentFeedBackCard = ({
+  borderRadius,
+  backgroundColor,
+  width = '450px',
+  height,
+  style,
+  children,
+  ...props
+}: ComPoundCardProps) => {
+  const ref = useRef<any>(null)
 
-//   </div>)
-// }
+  const scroll = (scrollOffset: number): void => {
+    ref.current.scrollLeft += scrollOffset
+    return
+  }
+
+  return (
+    <Card
+      style={{
+        width,
+        height,
+        background: backgroundColor,
+        border: '1px solid #F0F0F0',
+        borderRadius,
+        ...style,
+      }}
+      {...props}
+    >
+      <>
+        <Typography
+          style={{
+            fontStyle: 'normal',
+            fontWeight: 500,
+            fontSize: '14px',
+            lineHeight: '22px',
+            color: '#2C2543',
+            marginBottom: 0,
+          }}
+          label={'Student feedback'}
+          type='div'
+        />
+        <div className='edlyft-card-feedback'>
+          <SessionFeedbackCard averageRating={1.1} date='Jul. 16' withDot />
+          <SessionFeedbackCard averageRating={4.7} date='Jul. 14' />
+          <SessionFeedbackCard averageRating={2.7} date='Jul. 9' />
+          <SessionFeedbackCard averageRating={3.6} date='Jul. 7' />
+          <SessionFeedbackCard averageRating={3.2} date='Jul. 7' />
+        </div>
+        <Typography
+          style={{
+            fontStyle: 'normal',
+            fontWeight: 400,
+            fontSize: '0.75rem',
+            lineHeight: '1.25rem',
+            marginTop: '14px',
+            color: '#C0BEC7',
+          }}
+          label='Hover on a session to view details'
+          type='div'
+        />
+      </>
+    </Card>
+  )
+}
 
 export const SessionFeedbackCard = ({
   borderRadius,
@@ -132,6 +190,19 @@ export const SessionFeedbackCard = ({
   children,
   ...props
 }: FeedbackCardProps): JSX.Element => {
+  let icon = ''
+  if (averageRating <= 2) {
+    icon = '🤕'
+    backgroundColor = '#FDF0F0'
+  } else if (2 < averageRating && 3.5 > averageRating) {
+    icon = '🙂'
+    backgroundColor = '#FEF8EF'
+  } else if (3.5 < averageRating && 4.5 > averageRating) {
+    icon = '😁'
+  } else if (4.5 <= averageRating) {
+    icon = '🤩'
+  }
+
   const BaseCard = () => (
     <div
       style={{
@@ -148,7 +219,7 @@ export const SessionFeedbackCard = ({
       <div></div>
       <div className='edlyft-feedback-date'>{date}</div>
       <div className='edlyft-feedback-rating'>{averageRating}</div>
-      <div className='edlyft-feedback-icon'>😂</div>
+      <div className='edlyft-feedback-icon'>{icon}</div>
     </div>
   )
   if (!withDot) {
@@ -161,4 +232,72 @@ export const SessionFeedbackCard = ({
       </div>
     )
   }
+}
+
+export const ZoomCard = ({
+  borderRadius = '16px',
+  backgroundColor = '#FFFFFF',
+  width = '234px',
+  height = '75px',
+  style,
+  children,
+  ...props
+}: ComPoundCardProps): JSX.Element => {
+  return (
+    <Card
+      style={{
+        width,
+        height,
+        padding: '0',
+        // padding: '8px 4px',
+        background: backgroundColor,
+        borderRadius,
+        ...style,
+      }}
+      {...props}
+    >
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          padding: '16px 19px 16px 13px',
+          height: '100%',
+          width: '100%',
+        }}
+      >
+        <div>
+          <Typography
+            label='12:00 pm - 12:15 pm'
+            textColor='#2C2543'
+            type='div'
+          />
+          <Typography
+            label='Adetokunbo Abiola'
+            textColor='#BABABA'
+            type='div'
+          />
+        </div>
+        <Divider
+          style={{
+            height: '100%',
+          }}
+          type='vertical'
+        />
+        <div>
+          <Typography
+            style={{
+              fontStyle: 'normal',
+              fontWeight: 500,
+              fontSize: '14px',
+              lineHeight: '22px',
+            }}
+            label='Join'
+            textColor='#4290F3'
+            type='div'
+          />
+        </div>
+      </div>
+    </Card>
+  )
 }
