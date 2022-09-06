@@ -4,6 +4,7 @@
   "version": "latest",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "author": "Thomas L'Anglais",
   "files": [
     "dist"
@@ -17,9 +18,7 @@
     "url": "https://github.com/Edlyft/design-system/issues"
   },
   "scripts": {
-    "build": "rimraf /dist && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
-    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "build": "rimraf dist && node build.js && tsc --emitDeclarationOnly --outDir dist/types",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -34,19 +33,29 @@
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
+    "@storybook/addon-postcss": "^2.0.0",
     "@storybook/builder-webpack4": "^6.5.10",
     "@storybook/builder-webpack5": "^6.5.10",
     "@storybook/manager-webpack4": "^6.5.10",
     "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.10",
     "@storybook/testing-library": "^0.0.13",
     "@types/node": "^18.7.15",
     "@types/react": "^16.13.1",
     "@types/react-dom": "^16.0.0",
+    "argparse": "^2.0.1",
     "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "esbuild": "^0.15.7",
+    "esbuild-sass-plugin": "^2.3.2",
+    "postcss": "^8.4.16",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rimraf": "^3.0.2",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "tailwindcss": "^3.1.8",
     "typescript": "^4.8.2",
     "web-vitals": "^2.1.4"
   },

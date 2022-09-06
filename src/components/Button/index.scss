@@ -1,0 +1,25 @@
+$variants: (
+  primary: (
+    bg: var(--color-blue),
+    color: white
+  ),
+  danger: (
+    bg: var(--color-red),
+    color: white
+  )
+);
+
+.ds-btn {
+
+  @each $name, $obj in $variants {
+    &.ds-btn__#{$name} {
+      background-color: map-get($map: $obj, $key: bg);
+      color: map-get($map: $obj, $key: color);
+
+      &.ds-btn__inverted {
+        background-color: map-get($map: $obj, $key: color);
+        color: map-get($map: $obj, $key: bg);
+      }
+    }
+  }
+}

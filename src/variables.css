@@ -1,0 +1,36 @@
+:root {
+  --color-gray-thin: #f4f6f3;
+  --color-gray-lightest: #f9f9f9;
+  --color-gray-lighter-hard: #f4f6f3;
+  --color-gray-lighter: #eeeef0;
+  --color-gray-lighter-soft: #eaeaea;
+  --color-gray-lighter-thin: #eaedf3;
+  --color-gray-light: #999999;
+  --color-gray: #969696;
+  --color-gray-storm: #737a91;
+  --color-gray-dark: #666666;
+  --color-gray-darkest: #333333;
+  --color-gray-suit: #8b8896;
+  --color-gray-video: rgba(44, 37, 67, 0.8);
+  --color-peach: #f99472;
+  --color-peach-lightest: rgba(249, 148, 114, 0.3);
+  --color-purple: #b672f9;
+  --color-purple-lightest: rgba(182, 114, 249, 0.3);
+  --color-violet-dark: #2c2543;
+  --color-red: #eb6469;
+  --color-red-lightest: #fdeff0;
+  --color-blue: #4290f3;
+  --color-blue-lighter: #ebf3fd;
+  --color-blue-light: #4081eb;
+  --color-blue-lightest: rgba(66, 144, 243, 0.08);
+  --color-blue-darkest: #1e1147;
+  --color-green: #78ca95;
+  --color-green-lightest: #f1faf4;
+  --color-gold: #f6bd5a;
+  --color-gold-lightest: rgba(246, 189, 90, 0.1);
+  --color-yellow: #f9d772;
+  --color-yellow-lightest: rgba(249, 215, 114, 0.3);
+  --sidebar-width: 240px;
+  --main-content-spacing: 20px;
+  --header-height-desktop: 91px;
+}
