@@ -1,12 +1,12 @@
 {
-  "name": "boye-design-sys",
-  "version": "0.1.0",
-  "main": "./lib/main.js",
-  "module": "./lib/main.js",
-  "types": "./lib/main.d.ts",
-  "author": "Olanrewaju A. Olaboye",
+  "name": "@edlyft/design-system",
+  "description": "The react component library for Edlyft UI development",
+  "version": "latest",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "author": "Thomas L'Anglais",
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": {
     "type": "git",
@@ -16,47 +16,43 @@
   "bugs": {
     "url": "https://github.com/Edlyft/design-system/issues"
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
-    "@types/node": "^16.11.26",
-    "@types/react": "^17.0.43",
-    "@types/react-dom": "^17.0.14",
-    "antd": "^4.19.5",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "typescript": "^4.6.3",
+  "scripts": {
+    "build": "rimraf /dist && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module CommonJS --outDir dist/cjs",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "web-vitals": "^2.1.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "release": "standard-version && npm publish",
-    "build": "tsc -p tsconfig.json && yarn copy-files",
-    "copy-files": "copyfiles -u 1 \"src/**/*.css\" \"src/**/*.svg\" \"src/**/*.json\" lib/",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "prebuild": "rimraf lib"
+  "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/node": "^18.7.15",
+    "@types/react": "^16.13.1",
+    "@types/react-dom": "^16.0.0",
+    "babel-loader": "^8.2.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.8.2",
+    "web-vitals": "^2.1.4"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
   },
   "browserslist": {
     "production": [
@@ -69,25 +65,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-interactions": "^6.4.19",
-    "@storybook/addon-links": "^6.4.19",
-    "@storybook/builder-webpack5": "^6.4.19",
-    "@storybook/manager-webpack5": "^6.4.19",
-    "@storybook/node-logger": "^6.4.19",
-    "@storybook/preset-create-react-app": "^4.1.0",
-    "@storybook/react": "^6.4.19",
-    "@storybook/testing-library": "^0.0.9",
-    "copyfiles": "^2.4.1",
-    "rimraf": "^3.0.2",
-    "webpack": "^5.70.0"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "directories": {
-    "lib": "lib"
-  },
-  "license": "ISC"
+  }
 }
