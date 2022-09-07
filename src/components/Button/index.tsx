@@ -24,7 +24,7 @@ function getInvertedClass(inverted?: boolean, opts?): string {
 }
 
 export const Button: React.FC<ButtonProps> = ({ variant = 'primary', inverted, ...props }) => {
-  const {children, className} = props;
+  const {children, className, ...rest} = props;
 
   const classes = [
     'ds-btn',
@@ -35,6 +35,6 @@ export const Button: React.FC<ButtonProps> = ({ variant = 'primary', inverted, .
   let _className = classes.join(' ');
 
   return (
-    <button className={_className} {...props}>{children}</button>
+    <button className={_className} {...rest}>{children}</button>
   )
 }
